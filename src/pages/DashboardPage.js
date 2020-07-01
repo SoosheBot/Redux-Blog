@@ -1,14 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 const DashboardPage = () => (
   <section>
     <h1>Dashboard</h1>
-
-    <Link to="posts" className="button">
+    <p>This is the dashboard.</p>
+    <Link to="/posts" className="button">
       View Posts
     </Link>
   </section>
-);
+)
 
-export default DashboardPage;
+export default DashboardPage

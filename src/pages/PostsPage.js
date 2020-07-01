@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 
 //4. brings in the asych fetchPosts action
-import { fetchPosts } from '../actions/postsActions';
+import { fetchPosts } from '../actions/postActions';
 // 6. brings in the actual blog post component
 import { Post } from '../components/Post';
 
