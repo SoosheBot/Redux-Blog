@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
+import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 
-import { fetchPosts } from "../actions/postActions";
+import { fetchPost } from "../actions/singlePostActions";
 
 
 import { Post } from "../components/Post";
@@ -11,13 +12,15 @@ const SinglePostPage = ({
   match,
   dispatch,
   post,
+  // comments,
   hasErrors,
   loading
 }) => {
   useEffect(() => {
     const { id } = match.params;
 
-    dispatch(fetchPosts(id));
+    // dispatch(fetchComments(id))
+    dispatch(fetchPost(id));
   }, [dispatch, match]);
 
   const renderPost = () => {
@@ -31,6 +34,7 @@ const SinglePostPage = ({
   return (
     <section>
       {renderPost()}
+      <Link to="/posts">Back to Posts...</Link>
     </section>
   );
 };

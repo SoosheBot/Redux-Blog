@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 
 //4. brings in the asych fetchPosts action
-import { fetchPosts } from '../actions/postActions';
+import { fetchPosts } from '../actions/postsActions';
 // 6. brings in the actual blog post component
 import { Post } from '../components/Post';
 
@@ -29,7 +29,7 @@ const PostsPage = ({ dispatch, loading, posts, hasErrors }) => {
     <section>
       <h1>Posts</h1>
       {renderPosts()}
-      <Link to="/">Back</Link>
+      <Link to="/">Back to Home</Link>
     </section>
   );
 };
