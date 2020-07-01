@@ -1,35 +1,32 @@
 import React, { useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-//4. brings in the asych fetchPosts action
-import { fetchPosts } from '../actions/postsActions';
+//4. brings in the async fetchPosts action
+import { fetchPosts } from "../actions/postsActions";
 // 6. brings in the actual blog post component
-import { Post } from '../components/Post';
+import { Post } from "../components/Post";
 
 // 1. puts Redux state in props of the component
 const PostsPage = ({ dispatch, loading, posts, hasErrors }) => {
-    // 5. makes everything "go"
-    useEffect(() => {
-        dispatch(fetchPosts())
-    }, [dispatch])
+  // 5. makes everything "go"
+  useEffect(() => {
+    dispatch(fetchPosts());
+  }, [dispatch]);
 
-    //7. Shows the states (loading, error, or success)
-    const renderPosts = () => {
-        if (loading) {
-            return <p>Loading posts...</p>
-        } else if (hasErrors) {
-            return <p>Unable to display posts.</p>
-        }
-        return posts.map(post => <Post key={post.id} post={post} excerpt />)
+  //7. Shows the states (loading, error, or success)
+  const renderPosts = () => {
+    if (loading) return <p>Loading posts...</p>;
+    if (hasErrors) return <p>Unable to display posts.</p>;
+    console.log("posts", posts)
+    return posts.map(post => <Post key={post.id} post={post} excerpt />);
+  };
 
-    }
-
-    return (
+  return (
     <section>
       <h1>Posts</h1>
       {renderPosts()}
-      <Link to="/">Back to Home</Link>
+      <Link to="/">Back to Home...</Link>
     </section>
   );
 };
