@@ -26,7 +26,7 @@ const PostsPage = ({ dispatch, loading, posts, hasErrors }) => {
     <section>
       <h1>Posts</h1>
       {renderPosts()}
-      <Link to="/">Back to Home...</Link>
+      <Link to="/dashboard">Back to Dashboard...</Link>
     </section>
   );
 };

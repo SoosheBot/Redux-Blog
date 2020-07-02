@@ -10,8 +10,10 @@ import DashboardPage from './pages/DashboardPage'
 import PostsPage from './pages/PostsPage'
 import SinglePostPage from './pages/SinglePostPage'
 
+
 const App = () => {
   return (
+
     <Router>
       <Switch>
         <Route exact path="/" component={DashboardPage} />
@@ -23,4 +25,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
