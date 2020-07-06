@@ -10,7 +10,7 @@ const DashboardPage = () => (
       <Link to="/signup">Sign Up</Link>
       </nav>
     <h1>Dashboard</h1>
-    <p>This is the dashboard.</p>
+    <p>Welcome to the Redux Blog, a practical exercise in building with React Redux.</p>
     <Link to="/posts" className="button">
       View Posts
     </Link>
