@@ -7,8 +7,10 @@ import { fetchPosts } from "../actions/postsActions";
 // 6. brings in the actual blog post component
 import { Post } from "../components/Post";
 
+
 // 1. puts Redux state in props of the component
 const PostsPage = ({ dispatch, loading, posts, hasErrors }) => {
+
   // 5. makes everything "go"
   useEffect(() => {
     dispatch(fetchPosts());
@@ -18,14 +20,17 @@ const PostsPage = ({ dispatch, loading, posts, hasErrors }) => {
   const renderPosts = () => {
     if (loading) return <p>Loading posts...</p>;
     if (hasErrors) return <p>Unable to display posts.</p>;
-    console.log("posts", posts)
     return posts.map(post => <Post key={post.id} post={post} excerpt />);
   };
+
+   
+
+ 
 
   return (
     <section>
       <h1>Posts</h1>
-      {renderPosts()}
+       {renderPosts()}
       <Link to="/dashboard">Back to Dashboard...</Link>
     </section>
   );
@@ -40,3 +45,13 @@ const mapStateToProps = (state) => ({
 
 // 3. connects Redux and React
 export default connect(mapStateToProps)(PostsPage);
+
+
+
+
+
+// useEffect(() => {
+//   const fetchPosts = async () => {
+//     setLoading=(true);
+//   }
+// })
